@@ -1,7 +1,7 @@
 class Character {
 
     public void move(){
-        System.out.println(" is moving");
+        System.out.println("moving");
     }
 }
 
@@ -9,11 +9,11 @@ class Hero extends Character{
     
     @Override
     public void move (){
-        System.out.println(" is moving.");
+        System.out.println("moving.");
     }
     
     public void move (String direction){
-        System.out.println("is moving " + direction + ".");
+        System.out.println("moving " + direction + ".");
     }
 }
 
@@ -21,23 +21,19 @@ class Enemy extends Character{
 
     @Override
     public void move(){
-        System.out.println(" is moving.");
+        System.out.println(" moving.");
     }
     public void move (int step){
-        if (step <2 ){
-        System.out.println( " is moving " + step + "step.");
-        }else {
-            System.out.println( " is moving " + step + " steps.");
+        System.out.println( "moving " + step + " steps.");
         }
     }
-}
 
 class Fighter extends Hero{
 
     
     @Override
     public void move(){
-        System.out.println(" is moving.");
+        System.out.println("moving.");
     }  
 }
 
@@ -45,7 +41,7 @@ class Witch extends Enemy{
 
     @Override
     public void move(){
-        System.out.println( " is moving.");
+        System.out.println( "moving.");
     }  
 }
 
@@ -54,20 +50,19 @@ public class App {
         // Static polymorphism
         Hero hero = new Hero();
         Enemy enemy = new Enemy();
-        hero.move("left"); 
+        hero.move("right"); 
         enemy.move(7);
 
         // Dynamic polymorphism - reference of Character to Hero, Enemy, Witch, and Fighter objects
-        Character harryPotter = new Hero();
-        Character voldemort = new Enemy();
-        Character dracoMalfoy = new Witch();
-        Character HermioneGranger = new Fighter();
+        Character Spongebob = new Hero();
+        Character Plankton = new Enemy();
+        Character Patrick = new Witch();
+        Character Sandy = new Fighter();
 
-        harryPotter.move();
-        harryPotter.move();
-        voldemort.move();
-        dracoMalfoy.move();
-        HermioneGranger.move();
+        Spongebob.move();
+        Plankton.move();
+        Patrick.move();
+        Sandy.move();
 
         // Dynamic polymorphism - reference of Character to Witch object casted to Fighter object
         Character Author = new Witch();
